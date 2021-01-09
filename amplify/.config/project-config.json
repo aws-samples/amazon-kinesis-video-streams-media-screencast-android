@@ -1,0 +1,13 @@
+{
+    "projectName": "blog201228",
+    "version": "3.0",
+    "frontend": "android",
+    "android": {
+        "config": {
+            "ResDir": "src/main/res"
+        }
+    },
+    "providers": [
+        "awscloudformation"
+    ]
+}
