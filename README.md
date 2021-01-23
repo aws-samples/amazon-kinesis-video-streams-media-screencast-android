@@ -13,19 +13,19 @@ It was implemented by adding only the screencast function while maintaining the 
 - Open terminal and run npm install -g @aws-amplify/cli to update to the latest Amplify CLI.
 
 ####   Amplify CLI is already configured
-- If you haven’t configured the Amplify CLI yet, follow <a href="https://docs.amplify.aws/cli/start/install" > this guide </a> on our documentation page. ( run  - amplify configure ).
+- If you haven’t configured the Amplify CLI yet, follow <a href="https://docs.amplify.aws/cli/start/install#configure-the-amplify-cli" > this guide </a> on our documentation page.
 
-####   Install Android Studio
+####   Install <a href="https://developer.android.com/studio" >Android Studio</a>
 
 
 
 ## Instructions
 
-### Step1. Source Download from Git.    
+### Step1. Source Download from GitHub.    
 
 
-### Step2. AWS Cognito Service for user authentication
-#### 1.    Creating and integrating Cognito service using amplify cli.
+### Step2. Amazon Cognito Service for user authentication
+#### 1. Create and integrate Cognito using amplify cli.
 
     
     cd amazon-kinesis-video-streams-webrtc-sdk-android
@@ -54,7 +54,7 @@ After about 10 minutes, Amazon Cognito Service is created in your AWS account, a
 Through Amazon Cognito service, we can authorize logged-in users to use the aws service. This app uses the kinesis video stream service for screen casting. It is necessary to add the AmazonKinesisVideoStreamFullAccess policy to the IAM role specified in the Authenticated role so that authenticated users can use the kinesis video stream service. 
 Congito > Federated Identities > Edit identity pool > Authenticated role
 
-IAM > Roles > amplify-webrtcandroid-dev-220724-authRole > Attach policies, add “AmazonKinesisAnalyticsFullAccess” 
+IAM > Roles > select your authenticated role. ex) 'amplify-webrtcandroid-dev-220724-authRole’  > Attach policies, add “AmazonKinesisAnalyticsFullAccess” 
 
  
  
@@ -67,15 +67,18 @@ Connect to the Kinesis console. Select the created channel (Kinesis Video Stream
 
 ## Cleanup
 
-#### 1. amplify delete 
-    amplify delete
- 
- See below for ‘amplify delete’ input values. 
- 
-    ? Are you sure you want to continue? This CANNOT be undone. (This would delete a
-    ll the environments of the project from the cloud and wipe out all the local fil
-    es created by Amplify CLI) Yes         
+ With the ‘amplify delete’ command, deletes all of the resources tied to the project from the cloud
 
-    
-#### 2. S3 bucket delete
-S3 > select bucket :  empty & delete
+    `
+    amplify delete
+    `
+
+  See below for ‘amplify delete’ input values. 
+
+    `
+	 ? Are you sure you want to continue? This CANNOT be undone. (This would delete all the env
+    ironments of the project from the cloud and wipe out all the local files created by Amplif
+    y CLI) Yes
+    `
+
+
